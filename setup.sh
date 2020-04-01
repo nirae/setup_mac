@@ -39,6 +39,18 @@ else
     echo "my theme is already installed"
 fi
 
+# Vim
+if [ ! -e $HOME/VIM_Custom ]
+then
+    cd && git clone https://github.com/nirae/VIM_Custom.git
+    cp ~/VIM_Custom/vimrc ~/.vimrc
+    mkdir -p ~/.vim/colors
+    cp ~/VIM_Custom/Tomorrow-Night.vim ~/.vim/colors/
+    source ~/.zshrc
+else
+    echo "my theme is already installed"
+fi
+
 # Vagrant
 if [ ! -e $HOME/.vagrant.d ]
 then
@@ -54,3 +66,5 @@ then
 else
     echo "tmux is already installed"
 fi
+
+source ~/.zshrc
