@@ -34,8 +34,17 @@ then
     cd && git clone https://github.com/nirae/ZSH_Custom.git
     rm -rf ~/.zshrc && ln -s ~/ZSH_Custom/.zshrc ~/.zshrc
     cp ~/ZSH_Custom/theme_perso.zsh-theme ~/.oh-my-zsh/themes/
+    source ~/.zshrc
 else
     echo "my theme is already installed"
+fi
+
+# Vagrant
+if [ ! -e $HOME/.vagrant.d ]
+then
+    curl https://raw.githubusercontent.com/nirae/install_vagrant_42/master/script.sh | bash
+else
+    echo "vagrant is already installed"
 fi
 
 # Tmux
